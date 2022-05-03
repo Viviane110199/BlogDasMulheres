@@ -1,5 +1,6 @@
 import React from 'react';
 import {Typography, Box, Grid, Button} from '@material-ui/core';
+import TabPostagem from '../../components/postagens/tabpostagem/TabPostagem';
 import './Home.css';
 
 function Home() {
@@ -8,7 +9,7 @@ function Home() {
             <Grid container direction="row" justifyContent="center" alignItems="center" className='caixa'>
                 <Grid alignItems="center" item xs={6}>
                     <Box paddingX={20} >
-                        <Typography variant="h3" gutterBottom color="textPrimary" component="h3" align="center" className='titulo'>Seja bem vindo(a)!</Typography>
+                        <Typography variant="h3" gutterBottom color="textPrimary" component="h3" align="center" className='titulo'>Seja bem vinde!</Typography>
                         <Typography variant="h5" gutterBottom color="textPrimary" component="h5" align="center" className='titulo'>Expresse aqui os seus pensamentos e opiniões!</Typography>
                     </Box>
                     <Box display="flex" justifyContent="center">
@@ -20,7 +21,9 @@ function Home() {
                 <Grid item xs={6} >
                     <img src="https://media-exp1.licdn.com/dms/image/C4E03AQGtQh-yGF5mBA/profile-displayphoto-shrink_800_800/0/1646440280736?e=1656547200&v=beta&t=RK-zBr5NT9YpP1-HUF5ySnqqSHmSpxBXy6PuA3IdtL0" alt="Minha foto" width="500px" height="500px" padding-bottom="0%"/>
                 </Grid>
-                <Grid xs={12} className='postagens'></Grid>
+                <Grid xs={12} className='postagens'>
+                    <TabPostagem />
+                </Grid>
             </Grid>
         </>
     );
