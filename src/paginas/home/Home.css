@@ -1,19 +1,22 @@
-.caixa{
+.caixa {
     background-color: #e81d61;
+    flex-direction: row;  
+    justify-content: center; 
+    align-items: center;
 }
 
-.titulo{
+.titulo {
    color: white !important;
    font-weight: bold !important;
 }
 
-.botao{
-    border-color: white;
+.botao {
+    border-color: white !important;
     background-color: white !important;
-    color: #d21554  !important;
+    color: #d21554 !important;
     font-weight: bold !important;
 }
 
-.postagens{
+.postagens {
     background-color: white;
 }

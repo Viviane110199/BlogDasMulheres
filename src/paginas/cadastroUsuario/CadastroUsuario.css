@@ -1,10 +1,10 @@
-.imagem2{
-    background-image: url(https://media-exp1.licdn.com/dms/image/C4E03AQGtQh-yGF5mBA/profile-displayphoto-shrink_800_800/0/1646440280736?e=1656547200&v=beta&t=RK-zBr5NT9YpP1-HUF5ySnqqSHmSpxBXy6PuA3IdtL0);
+.imagem2 {
+    background-image: url(https://media-exp1.licdn.com/dms/image/C4D03AQF80yvNW4LLpA/profile-displayphoto-shrink_800_800/0/1651601832552?e=1657152000&v=beta&t=3GF8eDhfeHq5btGWBQ62x7JmE3Odh5eLuwG8MMiynG8);
     background-repeat: no-repeat;
     width: 100vh;
     min-height: 100vh;
     background-size: cover;
-    background-position: center; 
+    background-position: center;
 }
 
 .textos2 {
@@ -13,8 +13,4 @@
 
 .btnCancelar {
     margin-right: 20px !important;
-}
-
-.text-decorator-none {
-    text-decoration: none;
 }

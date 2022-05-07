@@ -1,5 +1,5 @@
-import React, { ChangeEvent, useEffect, useState } from 'react'
-import { Box, Button, Grid, TextField, Typography } from '@material-ui/core'
+import React, { ChangeEvent, useEffect, useState } from 'react';
+import { Box, Button, Grid, TextField, Typography } from '@material-ui/core';
 import { Link, useNavigate } from 'react-router-dom';
 import User from '../../models/User';
 import { cadastroUsuario } from '../../services/Service';
@@ -49,20 +49,20 @@ function CadastroUsuario() {
         if (confirmarSenha === user.senha && user.senha.length >= 8) {
 
             try {
-                cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult)
-                alert('Usuario cadastrado com sucesso')
+                await cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult)
+                alert('Usuário cadastrado com sucesso!')
 
             } catch (error) {
                 console.log(`Error: ${error}`)
                 
-                alert("Erro ao cadastrar o Usuário")
+                alert("Erro ao cadastrar o Usuário!")
             }
 
         } else {
-            alert('Dados inconsistentes. Verifique as informações de cadastro.')
+            alert('Dados inconsistentes. Verifique as informações de cadastro!')
 
             setUser({ ...user, senha: "" }) 
-            setConfirmarSenha("")          
+            setConfirmarSenha("")           
         }
     }
 
@@ -72,14 +72,48 @@ function CadastroUsuario() {
             <Grid item xs={6} alignItems='center'>
                 <Box paddingX={10}>
                     
-                    <form onSubmit={ cadastrar }>
+                    <form className='formulario' onSubmit={ cadastrar }>
                         <Typography variant='h3' gutterBottom color='textPrimary' component='h3' align='center' className='textos2'>Cadastrar</Typography>
                         
-                        <TextField value={user.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='nome' label='nome' variant='outlined' name='nome' margin='normal' fullWidth placeholder='Insira seu nome' required />
-                        <TextField value={user.foto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='foto' label='foto' variant='outlined' name='foto' margin='normal' fullWidth placeholder='Insira um link de foto' required />
-                        <TextField value={user.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='usuario' label='usuario' variant='outlined' name='usuario' margin='normal' fullWidth placeholder='Insira um email válido' required />
-                        <TextField value={user.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='senha' label='senha' variant='outlined' name='senha' margin='normal' type='password' fullWidth placeholder='Insira no mínimo 8 caracteres' required />
-                        <TextField value={confirmarSenha} onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)} id='confirmarSenha' label='confirmarSenha' variant='outlined' name='confirmarSenha' margin='normal' type='password' fullWidth placeholder='Insira novamente a senha' required />
+                        <TextField
+                            value={user.nome}
+                            onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+                            id='nome' label='Nome' variant='outlined'
+                            name='nome' margin='normal' fullWidth 
+                            placeholder='Insira seu nome'
+                            required />
+
+                        <TextField
+                            value={user.foto}
+                            onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+                            id='foto' label='Foto' variant='outlined'
+                            name='foto' margin='normal' fullWidth 
+                            placeholder='Insira um link de foto'
+                            required />
+
+                        <TextField
+                            value={user.usuario}
+                            onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+                            id='usuario' label='Usuario' variant='outlined'
+                            name='usuario' margin='normal' fullWidth 
+                            placeholder='Insira um email válido'
+                            required />
+
+                        <TextField
+                            value={user.senha}
+                            onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+                            id='senha' label='Senha' variant='outlined'
+                            name='senha' margin='normal' type='password' fullWidth 
+                            placeholder='Insira no mínimo 8 caracteres'
+                            required />
+
+                        <TextField
+                            value={confirmarSenha}
+                            onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)}
+                            id='confirmarSenha' label='Confirmar Senha' variant='outlined'
+                            name='confirmarSenha' margin='normal' type='password' fullWidth 
+                            placeholder='Insira novamente a senha'
+                            required />
                         
                         <Box marginTop={2} textAlign='center'>
                             <Link to='/login' className='text-decorator-none'>
@@ -87,13 +121,10 @@ function CadastroUsuario() {
                                     Cancelar
                                 </Button>
                             </Link>
-                            <Link className='text-decorator-none' to='/login'>
-                                <Button type='submit' variant='contained' color='secondary'>
-                                    Cadastrar
-                                </Button>
-                            </Link>
+                            <Button type='submit' variant='contained' color='secondary'>
+                                Cadastrar
+                            </Button>
                         </Box>
-
                     </form>
                 </Box>
             </Grid>
@@ -101,4 +132,4 @@ function CadastroUsuario() {
     )
 }
 
-export default CadastroUsuario
+export default CadastroUsuario;

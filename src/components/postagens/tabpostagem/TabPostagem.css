@@ -1,11 +1,7 @@
-.titulo{
+.barraSobre {
+    background-color: #d21554 !important;
+}
+
+.texto {
     font-weight: bold;
- }
-
- .barra {
-     background-color: #d21554;
- }
-
- .text {
-    font-weight: bold
- }
+}

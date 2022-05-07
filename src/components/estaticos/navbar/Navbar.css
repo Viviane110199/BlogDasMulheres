@@ -1,12 +1,23 @@
 .nav {
-    background-color: #d21554 !important;
+    background-color: #000000 !important;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
-.cursor{
+.box1 {
+    padding-left: 38px;
+}
+
+.box2 {
+    padding-left: 54%;
+}
+
+.cursor1 {
     cursor: pointer;
     color: white;
 }
 
-.text-decorator-none{
+.text-decorator-none {
     text-decoration: none;
 }
