@@ -1,15 +1,17 @@
 import React, { ChangeEvent, useEffect, useState } from 'react';
 import { Box, Button, Grid, TextField, Typography } from '@material-ui/core';
 import { Link, useNavigate } from 'react-router-dom';
-import useLocalStorage from 'react-use-localstorage';
 import UserLogin from '../../models/UserLogin';
 import { login } from '../../services/Service';
 import './Login.css';
+import { useDispatch } from 'react-redux';
+import { addId, addToken } from '../../store/tokens/actions';
 
 function Login() {
 
     let history = useNavigate()
-    const [token, setToken] = useLocalStorage('token')
+    const dispatch = useDispatch(); 
+    const [token, setToken] = useState('')
 
     const [userLogin, setUserLogin] = useState<UserLogin>({
         id: 0,
@@ -20,8 +22,18 @@ function Login() {
         token: ""
     })
 
+    const [respUserLogin, setRespUserLogin] = useState<UserLogin> ({
+        id: 0,
+        nome: "",
+        usuario: "",
+        senha: "",
+        foto: "",
+        token: ""
+    })
+
     useEffect(() => {
         if(token !== ""){
+            dispatch(addToken(token))
             history('/home')
         }
     }, [token])
@@ -32,6 +44,17 @@ function Login() {
             [e.target.name]: e.target.value           
         })
     }
+
+    useEffect(() => {
+        if(respUserLogin.token !=="") {
+            console.log("Token: " + respUserLogin.token)
+            console.log("ID: " + respUserLogin.id)
+
+            dispatch(addToken(respUserLogin.token))
+            dispatch(addId(respUserLogin.id.toString()))
+            history('/home')
+        }
+    }, [respUserLogin.token])
 
     async function logar(e: ChangeEvent<HTMLFormElement>){
         e.preventDefault()

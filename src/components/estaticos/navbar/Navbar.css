@@ -2,20 +2,16 @@
     background-color: #000000 !important;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    align-items: center;
 }
 
-.box1 {
-    padding-left: 38px;
-}
-
-.box2 {
-    padding-left: 54%;
-}
-
-.cursor1 {
+.cursor2 {
     cursor: pointer;
     color: white;
+}
+
+.nav-text {
+    color: #d21554 !important;
 }
 
 .text-decorator-none {

@@ -1,18 +1,22 @@
 import React, { ChangeEvent, useEffect, useState } from 'react';
 import { Button, Container, FormControl, FormHelperText, InputLabel, MenuItem, Select, TextField, Typography } from '@material-ui/core';
 import { useNavigate, useParams } from 'react-router-dom';
-import useLocalStorage from 'react-use-localstorage';
 import { busca, buscaId, post, put } from '../../../services/Service';
 import Tema from '../../../models/Tema';
 import Postagem from '../../../models/Postagem';
 import './CadastroPostagem.css';
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/tokensReducer';
 
 function CadastroPostagem() {
 
-    let history = useNavigate()
-    const { id } = useParams<{ id: string }>()
-    const [temas, setTemas] = useState<Tema[]>([])
-    const [token, setToken] = useLocalStorage('token')
+    let history = useNavigate();
+    const { id } = useParams<{ id: string }>();
+    const [temas, setTemas] = useState<Tema[]>([]);
+    
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens
+    );
 
     const [tema, setTema] = useState<Tema>({
         id: 0,
@@ -109,7 +113,7 @@ function CadastroPostagem() {
     return (
         <Container maxWidth="sm" className="topo">
             <form onSubmit={onSubmit}>
-                <Typography variant="h3" color="textSecondary" component="h1" align="center" >Formulário de cadastro postagem</Typography>
+                <Typography variant="h3" color="textSecondary" component="h1" align="center">Formulário de cadastro postagem</Typography>
 
                 <TextField
                     value={postagem.titulo}

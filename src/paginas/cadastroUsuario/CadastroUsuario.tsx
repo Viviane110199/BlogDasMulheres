@@ -7,8 +7,8 @@ import './CadastroUsuario.css';
 
 function CadastroUsuario() {
 
-    let history = useNavigate()
-    const [confirmarSenha, setConfirmarSenha] = useState<String>("")
+    let history = useNavigate();
+    const [confirmarSenha, setConfirmarSenha] = useState<String>("");
 
     const [user, setUser] = useState<User>({
         id: 0,
@@ -16,7 +16,7 @@ function CadastroUsuario() {
         usuario: '',
         senha: '',
         foto: ''
-    })
+    });
 
     const [userResult, setUserResult] = useState<User>({
         id: 0,
