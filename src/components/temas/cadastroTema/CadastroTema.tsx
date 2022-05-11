@@ -6,6 +6,7 @@ import Tema from '../../../models/Tema';
 import "./CadastroTema.css";
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
+import { toast } from 'react-toastify';
 
 function CadastroTema() {
 
@@ -23,7 +24,16 @@ function CadastroTema() {
 
     useEffect(() => {
         if (token === "") {
-            alert("Você precisa estar logado!")
+            toast.error('Você precisa estar logado!', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            });
             history("/login")
         }
     }, [token])
@@ -49,49 +59,51 @@ function CadastroTema() {
         })
     }
 
-    async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
-        e.preventDefault()
-
-        if (id !== undefined) {
-
-            try {
-                await put(`/temas`, tema, setTema, {
+      async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
+            e.preventDefault()
+            console.log("temas " + JSON.stringify(tema))
+    
+            if (id !== undefined) {
+                console.log(tema)
+                put(`/temas`, tema, setTema, {
                     headers: {
                         'Authorization': token
                     }
                 })
-
-                alert('Tema atualizado com sucesso!');
-
-            } catch (error) {
-                console.log(`Error: ${error}`)
-                alert("Erro, por favor verifique a quantidade mínima de caracteres!")
-            }
-
-        } else {
-
-            try {
-                await post(`/temas`, tema, setTema, {
+                toast.success('Tema atualizado com sucesso!', {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: "colored",
+                    progress: undefined,
+                });
+            } else {
+                post(`/temas`, tema, setTema, {
                     headers: {
                         'Authorization': token
                     }
                 })
-                
-                alert('Tema cadastrado com sucesso!');
-                
-            } catch (error) {
-                console.log(`Error: ${error}`)
-                alert("Erro, por favor verifique a quantidade mínima de caracteres!")
+                toast.success('Tema cadastrado com sucesso!', {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: "colored",
+                    progress: undefined,
+                });
             }
+            back()
+    
         }
-        
-        back()
-
-    }
-
-    function back() {
-        history('/temas')
-    }
+    
+        function back() {
+            history('/temas')
+        }
 
     return (
         <Container maxWidth="sm" className="topo">

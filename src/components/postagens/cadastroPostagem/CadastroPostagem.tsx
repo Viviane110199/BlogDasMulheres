@@ -7,6 +7,7 @@ import Postagem from '../../../models/Postagem';
 import './CadastroPostagem.css';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
+import { toast } from 'react-toastify';
 
 function CadastroPostagem() {
 
@@ -33,7 +34,16 @@ function CadastroPostagem() {
 
     useEffect(() => {
         if (token === "") {
-            alert("Você precisa estar logado!")
+            toast.info('Você precisa estar logado!', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            });
             history("/login")
         }
     }, [token])
@@ -80,30 +90,40 @@ function CadastroPostagem() {
         e.preventDefault()
 
         if (id !== undefined) {
-            try {
-                await put(`/postagens`, postagem, setPostagem, {
-                    headers: {
-                        'Authorization': token
-                    }
-                })
-                alert('Postagem atualizada com sucesso!');
-            } catch (error) {
-                alert("Erro ao atualizar, verifique os campos!")
-            }
-
+            put(`/postagens`, postagem, setPostagem, {
+                headers: {
+                    'Authorization': token
+                }
+            })
+            toast.success('Postagem atualizada com sucesso!', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            });
         } else {
-            try {
-                await post(`/postagens`, postagem, setPostagem, {
-                    headers: {
-                        'Authorization': token
-                    }
-                })
-                alert('Postagem cadastrada com sucesso!');
-            } catch (error) {
-                alert("Erro ao cadastrar, verifique os campos!")
-            }
+            post(`/postagens`, postagem, setPostagem, {
+                headers: {
+                    'Authorization': token
+                }
+            })
+            toast.success('Postagem cadastrada com sucesso!', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            });
         }
         back()
+
     }
 
     function back() {
@@ -144,8 +164,8 @@ function CadastroPostagem() {
                     >
 
                         {
-                            temas.map(item => (
-                                <MenuItem value={item.id}>{item.descricao}</MenuItem>
+                            temas.map(tema => (
+                                <MenuItem value={tema.id}>{tema.descricao}</MenuItem>
                             ))
                         }
 
