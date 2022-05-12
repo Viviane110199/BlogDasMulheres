@@ -38,6 +38,12 @@ function CadastroTema() {
         }
     }, [token])
 
+    useEffect(() => {
+        if (id !== undefined) {
+            findById(id)
+        }
+    }, [id])
+
     async function findById(id: string) {
         await buscaId(`/temas/${id}`, setTema, {
             headers: {
@@ -45,12 +51,6 @@ function CadastroTema() {
             }
         })
     }
-
-    useEffect(() => {
-        if (id !== undefined) {
-            findById(id)
-        }
-    }, [id])
 
     function updatedModel(e: ChangeEvent<HTMLInputElement>) {
         setTema({

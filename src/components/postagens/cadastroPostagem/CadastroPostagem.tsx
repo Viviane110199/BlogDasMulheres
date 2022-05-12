@@ -63,7 +63,7 @@ function CadastroPostagem() {
     }, [id])
 
     async function getTemas() {
-        await busca("/temas", setTemas, {
+        await busca("/tema", setTemas, {
             headers: {
                 'Authorization': token
             }
@@ -127,7 +127,7 @@ function CadastroPostagem() {
     }
 
     function back() {
-        history('/posts')
+        history('/postagens')
     }
 
     return (
