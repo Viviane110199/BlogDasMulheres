@@ -29,7 +29,7 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/cadastro" element={<CadastroUsuario />} />
           <Route path="/temas" element={<ListaTema />} />
-          <Route path="/postagens" element={<ListaPostagem />} />
+          <Route path="/posts" element={<ListaPostagem />} />
           <Route path="/formularioPostagem" element={<CadastroPostagem />} />
           <Route path="/formularioPostagem/:id" element={<CadastroPostagem />} />
           <Route path="/formularioTema" element={<CadastroTema />} />

@@ -81,7 +81,7 @@ function CadastroTema() {
                     progress: undefined,
                 });
             } else {
-                post(`/temas`, tema, setTema, {
+                post(`/tema`, tema, setTema, {
                     headers: {
                         'Authorization': token
                     }
