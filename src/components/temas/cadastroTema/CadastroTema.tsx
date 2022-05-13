@@ -45,14 +45,14 @@ function CadastroTema() {
     }, [id])
 
     async function findById(id: string) {
-        await buscaId(`/temas/${id}`, setTema, {
+        await buscaId(`/tema/${id}`, setTema, {
             headers: {
                 'Authorization': token
             }
         })
-    }
+    };
 
-    function updatedModel(e: ChangeEvent<HTMLInputElement>) {
+    function updatedModel(e: ChangeEvent<HTMLInputElement>): void {
         setTema({
             ...tema,
             [e.target.name]: e.target.value
@@ -65,7 +65,7 @@ function CadastroTema() {
     
             if (id !== undefined) {
                 console.log(tema)
-                put(`/temas`, tema, setTema, {
+                put(`/tema`, tema, setTema, {
                     headers: {
                         'Authorization': token
                     }
