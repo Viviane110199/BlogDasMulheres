@@ -139,9 +139,11 @@ function CadastroUsuario() {
                                 <Button variant='contained' color='secondary' className='btnCancelar'>
                                     Cancelar
                                 </Button>
-                                <Button type='submit' variant='contained' color='secondary'>
-                                    Cadastrar
-                                </Button>
+                                <a href='/login' className='text-decorator-none'>
+                                    <Button type='submit' variant='contained' color='secondary'>
+                                        Cadastrar
+                                    </Button>
+                                </a>
                             </Link>
                         </Box>
                     </form>
