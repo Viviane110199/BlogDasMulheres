@@ -10,7 +10,7 @@ import { toast } from 'react-toastify';
 
 function DeletarPostagem() {
 
-    let history = useNavigate();
+    let navigate = useNavigate();
     const { id } = useParams<{ id: string }>();
     const [post, setPosts] = useState<Postagem>();
     
@@ -30,7 +30,7 @@ function DeletarPostagem() {
                 theme: "colored",
                 progress: undefined,
             });
-            history("/login")
+            navigate("/login")
 
         }
     }, [token])
@@ -50,7 +50,7 @@ function DeletarPostagem() {
     }
 
     async function sim() {
-        history('/posts')
+        navigate('/posts')
 
         try {
             await deleteId(`/postagens/${id}`, {
@@ -74,7 +74,7 @@ function DeletarPostagem() {
     }
 
     function nao() {
-        history('/posts')
+        navigate('/posts')
     }
 
     return (

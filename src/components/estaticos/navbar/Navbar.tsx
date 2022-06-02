@@ -9,7 +9,7 @@ import {toast} from 'react-toastify';
 
 function Navbar() {
 
-    let history = useNavigate();
+    let navigate = useNavigate();
     
     const token = useSelector<TokenState, TokenState["tokens"]>(
         (state) => state.tokens
@@ -29,7 +29,7 @@ function Navbar() {
             theme: "colored",
             progress: undefined,
         });
-        history("/login")
+        navigate("/login")
     }
 
     var navbarComponent;

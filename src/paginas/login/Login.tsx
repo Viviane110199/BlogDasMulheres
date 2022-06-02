@@ -10,7 +10,7 @@ import { toast } from 'react-toastify';
 
 function Login() {
 
-    let history = useNavigate()
+    let navigate = useNavigate()
     const dispatch = useDispatch(); 
     const [token, setToken] = useState('')
 
@@ -35,7 +35,7 @@ function Login() {
     useEffect(() => {
         if(token !== ""){
             dispatch(addToken(token))
-            history('/home')
+            navigate('/home')
         }
     }, [token])
 
@@ -53,7 +53,7 @@ function Login() {
 
             dispatch(addToken(respUserLogin.token))
             dispatch(addId(respUserLogin.id.toString()))
-            history('/home')
+            navigate('/home')
         }
     }, [respUserLogin.token])
 
@@ -61,7 +61,7 @@ function Login() {
         e.preventDefault()
 
         try {
-            await login(`/usuarios/logar`, userLogin, setRespUserLogin)
+            await login(`/usuarios/logar`, userLogin, setToken)
             toast.success('Usuário logado com sucesso!', {
                 position: "top-right",
                 autoClose: 2000,

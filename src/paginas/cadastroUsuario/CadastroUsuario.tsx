@@ -8,7 +8,7 @@ import { toast } from 'react-toastify';
 
 function CadastroUsuario() {
 
-    let history = useNavigate();
+    let navigate = useNavigate();
     const [confirmarSenha, setConfirmarSenha] = useState<String>("");
 
     const [user, setUser] = useState<User>({
@@ -29,7 +29,7 @@ function CadastroUsuario() {
 
     useEffect(() => {
         if (userResult.id !== 0) {
-            history("/login")
+            navigate("/login")
         }
     }, [userResult])
 
@@ -53,32 +53,38 @@ function CadastroUsuario() {
                 await cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult)
                 toast.success('Usuário cadastrado com sucesso!', {
                     position: "top-right",
-                    autoClose: 2000,
+                    autoClose: 5000,
                     hideProgressBar: false,
                     closeOnClick: true,
-                    pauseOnHover: false,
-                    draggable: false,
-                    theme: "colored",
+                    pauseOnHover: true,
+                    draggable: true,
                     progress: undefined,
-                });
+                })
 
             } catch (error) {
                 console.log(`Error: ${error}`)
                 
-                alert("Erro ao cadastrar o Usuário!")
+                toast.error('Dados inconsistentes. Favor verificar as informações de cadastro!', {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                })
             }
 
         } else {
-            toast.error('Dados inconsistentes. Favor verificar as informações de cadastro!', {
+            toast.error('Insira no miníno 8 caracteres na senha.!', {
                 position: "top-right",
-                autoClose: 2000,
+                autoClose: 5000,
                 hideProgressBar: false,
                 closeOnClick: true,
-                pauseOnHover: false,
-                draggable: false,
-                theme: "colored",
+                pauseOnHover: true,
+                draggable: true,
                 progress: undefined,
-            });
+            })
 
             setUser({ ...user, senha: "" }) 
             setConfirmarSenha("")           
@@ -139,12 +145,10 @@ function CadastroUsuario() {
                                 <Button variant='contained' color='secondary' className='btnCancelar'>
                                     Cancelar
                                 </Button>
-                                <a href='/login' className='text-decorator-none'>
-                                    <Button type='submit' variant='contained' color='secondary'>
-                                        Cadastrar
-                                    </Button>
-                                </a>
                             </Link>
+                            <Button type='submit' variant='contained' color='secondary'>
+                                Cadastrar
+                            </Button>
                         </Box>
                     </form>
                 </Box>

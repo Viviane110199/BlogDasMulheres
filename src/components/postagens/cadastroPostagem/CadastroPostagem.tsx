@@ -11,7 +11,7 @@ import { toast } from 'react-toastify';
 
 function CadastroPostagem() {
 
-    let history = useNavigate();
+    let navigate = useNavigate();
     const { id } = useParams<{ id: string }>();
     const [temas, setTemas] = useState<Tema[]>([]);
     
@@ -44,7 +44,7 @@ function CadastroPostagem() {
                 theme: "colored",
                 progress: undefined,
             });
-            history("/login")
+            navigate("/login")
         }
     }, [token])
 
@@ -127,7 +127,7 @@ function CadastroPostagem() {
     }
 
     function back() {
-        history('/posts')
+        navigate('/posts')
     }
 
     return (

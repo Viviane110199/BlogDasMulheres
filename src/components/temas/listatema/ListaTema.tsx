@@ -10,7 +10,7 @@ import { toast } from 'react-toastify';
 
 function ListaTema() {
 
-  let history = useNavigate();
+  let navigate = useNavigate();
   const [temas, setTemas] = useState<Tema[]>([]);
 
   const token = useSelector<TokenState, TokenState["tokens"]>(
@@ -29,7 +29,7 @@ function ListaTema() {
         theme: "colored",
         progress: undefined,
     });
-      history("/login")
+      navigate("/login")
     }
   }, [token])
 

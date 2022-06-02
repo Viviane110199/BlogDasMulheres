@@ -10,7 +10,7 @@ import { toast } from 'react-toastify';
 
 function CadastroTema() {
 
-    let history = useNavigate();
+    let navigate = useNavigate();
     const { id } = useParams<{ id: string }>();
 
     const token = useSelector<TokenState, TokenState["tokens"]>(
@@ -34,7 +34,7 @@ function CadastroTema() {
                 theme: "colored",
                 progress: undefined,
             });
-            history("/login")
+            navigate("/login")
         }
     }, [token])
 
@@ -102,7 +102,7 @@ function CadastroTema() {
         }
     
         function back() {
-            history('/temas')
+            navigate('/temas')
         }
 
     return (

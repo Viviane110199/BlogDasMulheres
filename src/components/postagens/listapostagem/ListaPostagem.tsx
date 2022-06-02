@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Box, Button, Card, CardActions, CardContent, Typography } from '@material-ui/core';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 import Postagem from '../../../models/Postagem';
 import { busca } from '../../../services/Service';
 import './ListaPostagem.css';
@@ -10,7 +10,7 @@ import { toast } from 'react-toastify';
 
 function ListaPostagem() {
 
-  let history = useNavigate();
+  let navigate = useNavigate();
   const [posts, setPost] = useState<Postagem[]>([]);
   
   const token = useSelector<TokenState, TokenState["tokens"]>(
@@ -29,7 +29,7 @@ function ListaPostagem() {
         theme: "colored",
         progress: undefined,
     });
-      history("/login")
+      navigate("/login")
     }
   }, [token])
 

@@ -10,7 +10,7 @@ import { toast } from 'react-toastify';
 
 function Home() {
 
-  let history = useNavigate();
+  let navigate = useNavigate();
     const token = useSelector <TokenState, TokenState["tokens"]> (
 
         (state) => state.tokens
@@ -30,7 +30,7 @@ function Home() {
             theme: "colored",
             progress: undefined,
           });
-          history("/login")
+          navigate("/login")
   
       }
   }, [token])
@@ -48,7 +48,6 @@ function Home() {
             <Box marginRight={1}>
               <ModalPostagem />
             </Box>
-            <Button className='botao' variant="outlined">Ver Postagens</Button>
           </Box>
 
         </Grid>

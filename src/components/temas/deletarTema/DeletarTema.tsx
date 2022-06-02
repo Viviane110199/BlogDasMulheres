@@ -10,7 +10,7 @@ import { toast } from 'react-toastify';
 
 function DeletarTema() {
 
-    let history = useNavigate();
+    let navigate = useNavigate();
     const { id } = useParams<{ id: string }>();
     const [tema, setTema] = useState<Tema>();
 
@@ -30,7 +30,7 @@ function DeletarTema() {
                 theme: "colored",
                 progress: undefined,
             });
-            history("/login")
+            navigate("/login")
 
         }
     }, [token])
@@ -50,7 +50,7 @@ function DeletarTema() {
     }
 
     async function sim() {
-        history('/temas')
+        navigate('/temas')
 
         try {
             await deleteId(`/tema/${id}`, {
@@ -77,7 +77,7 @@ function DeletarTema() {
     }
 
     function nao() {
-        history('/temas')
+        navigate('/temas')
     }
 
     return (
