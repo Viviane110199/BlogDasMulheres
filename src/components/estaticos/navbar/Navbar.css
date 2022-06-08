@@ -5,6 +5,11 @@
     align-items: center;
 }
 
+.nav-text1 {
+    color: #d21554 !important;
+    padding-left: 50px;
+}
+
 .cursor2 {
     cursor: pointer;
     color: white;

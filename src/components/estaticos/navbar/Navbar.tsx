@@ -1,17 +1,17 @@
 import React from 'react';
 import { AppBar, Box, Toolbar, Typography } from '@material-ui/core';
 import { Link, useNavigate } from 'react-router-dom';
-import './Navbar.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { TokenState } from '../../../store/tokens/tokensReducer';
-import { addToken } from '../../../store/tokens/actions';
+import { UserState } from '../../../store/user/userReducer';
+import { addToken } from '../../../store/user/actions';
 import {toast} from 'react-toastify';
+import './Navbar.css';
 
 function Navbar() {
 
     let navigate = useNavigate();
     
-    const token = useSelector<TokenState, TokenState["tokens"]>(
+    const token = useSelector<UserState, UserState["tokens"]>(
         (state) => state.tokens
       );
 
@@ -55,7 +55,7 @@ function Navbar() {
                 <Link to="/posts" className="text-decorator-none">
                     <Box mx={1} className='cursor1'>
                         <Typography className="nav-text" variant="h6" color="inherit">
-                            Postagens
+                            Feedbacks
                         </Typography>
                     </Box>
                 </Link>
@@ -63,15 +63,15 @@ function Navbar() {
                 <Link to="/temas" className="text-decorator-none">
                     <Box mx={1} className='cursor1'>
                         <Typography className="nav-text" variant="h6" color="inherit">
-                            Temas
+                            Empresas
                         </Typography>
                     </Box>
                 </Link>
 
                 <Link to="/formularioTema" className="text-decorator-none">
                     <Box mx={1} className='cursor1'>
-                        <Typography className="nav-text" variant="h6" color="inherit">
-                            Cadastrar Temas
+                        <Typography className="nav-text1" variant="h6" color="inherit">
+                            Cadastrar nome da empresa
                         </Typography>
                     </Box>
                 </Link>

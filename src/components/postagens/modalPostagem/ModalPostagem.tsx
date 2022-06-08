@@ -60,7 +60,7 @@ function ModalPostagem() {
             <Button
                 variant="outlined"
                 className="btnModal"
-                onClick={handleOpen}>Nova Postagem</Button>
+                onClick={handleOpen}>Dar feedback</Button>
             <Modal
                 open={open}
                 onClose={handleClose}

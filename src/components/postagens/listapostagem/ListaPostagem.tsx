@@ -1,21 +1,27 @@
 import React, { useEffect, useState } from 'react';
 import { Box, Button, Card, CardActions, CardContent, Typography } from '@material-ui/core';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
-import Postagem from '../../../models/Postagem';
 import { busca } from '../../../services/Service';
-import './ListaPostagem.css';
 import { useSelector } from 'react-redux';
-import { TokenState } from '../../../store/tokens/tokensReducer';
+import { UserState } from '../../../store/user/userReducer';
 import { toast } from 'react-toastify';
+import Postagem from '../../../models/Postagem';
+import './ListaPostagem.css';
 
 function ListaPostagem() {
 
   let navigate = useNavigate();
   const [posts, setPost] = useState<Postagem[]>([]);
   
-  const token = useSelector<TokenState, TokenState["tokens"]>(
+  const token = useSelector<UserState, UserState["tokens"]>(
     (state) => state.tokens
   );
+
+  const id = useSelector<UserState, UserState["id"]>(
+    (state) => state.id
+  )
+
+  let userId = +id
 
   useEffect(() => {
     if (token === "") {
@@ -53,7 +59,7 @@ function ListaPostagem() {
             <CardContent>
 
               <Typography color="textSecondary" gutterBottom>
-                Postagens
+                Feedback
               </Typography>
 
               <Typography variant="h5" component="h2">
@@ -68,11 +74,18 @@ function ListaPostagem() {
                 {post.tema?.descricao}
               </Typography>
 
+              <Typography variant="body2" component="p">
+                {post.usuario?.nome}
+              </Typography>
+
             </CardContent>
 
             <CardActions>
               <Box display="flex" justifyContent="center" mb={1.5}>
 
+              {
+              (post.usuario?.id !== null && userId === post.usuario?.id) ?
+                <>
                 <Link to={`/formularioPostagem/${post.id}`} className="text-decorator-none" >
                   <Box mx={1}>
                     <Button variant="contained" className="marginLeft" size='small' color="secondary" >
@@ -88,6 +101,11 @@ function ListaPostagem() {
                     </Button>
                   </Box>
                 </Link>
+                </>
+                    :
+                    <Box>
+                    </Box>
+                }
               </Box>
             </CardActions>
           </Card>

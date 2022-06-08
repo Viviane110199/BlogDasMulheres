@@ -1,14 +1,14 @@
 import React from 'react';
 import { Box, Grid, Typography } from '@material-ui/core';
+import { useSelector } from 'react-redux';
+import { UserState } from '../../../store/user/userReducer';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import GitHubIcon from '@material-ui/icons/GitHub';
-import { useSelector } from 'react-redux';
-import { TokenState } from '../../../store/tokens/tokensReducer';
 
 function Footer() {
 
-    const token = useSelector<TokenState, TokenState["tokens"]>(
+    const token = useSelector<UserState, UserState["tokens"]>(
         (state) => state.tokens
     );
 

@@ -1,5 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import {ToastContainer} from 'react-toastify';
 import Navbar from './components/estaticos/navbar/Navbar';
 import Footer from './components/estaticos/footer/Footer';
 import ListaTema from './components/temas/listatema/ListaTema';
@@ -11,9 +13,7 @@ import DeletarTema from './components/temas/deletarTema/DeletarTema';
 import Login from './paginas/login/Login';
 import Home from './paginas/home/Home';
 import CadastroUsuario from './paginas/cadastroUsuario/CadastroUsuario';
-import { Provider } from 'react-redux';
 import store from './store/store';
-import {ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 function App() {

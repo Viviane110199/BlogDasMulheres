@@ -1,12 +1,12 @@
 import React, { ChangeEvent, useEffect, useState } from 'react';
 import { Box, Button, Grid, TextField, Typography } from '@material-ui/core';
 import { Link, useNavigate } from 'react-router-dom';
-import UserLogin from '../../models/UserLogin';
 import { login } from '../../services/Service';
-import './Login.css';
 import { useDispatch } from 'react-redux';
-import { addId, addToken } from '../../store/tokens/actions';
+import { addId, addToken } from '../../store/user/actions';
 import { toast } from 'react-toastify';
+import UserLogin from '../../models/UserLogin';
+import './Login.css';
 
 function Login() {
 
@@ -47,7 +47,7 @@ function Login() {
     }
 
     useEffect(() => {
-        if(respUserLogin.token !=="") {
+        if(respUserLogin.token !== "") {
             console.log("Token: " + respUserLogin.token)
             console.log("ID: " + respUserLogin.id)
 
@@ -61,7 +61,7 @@ function Login() {
         e.preventDefault()
 
         try {
-            await login(`/usuarios/logar`, userLogin, setToken)
+            await login(`/usuarios/logar`, userLogin, setRespUserLogin)
             toast.success('Usuário logado com sucesso!', {
                 position: "top-right",
                 autoClose: 2000,

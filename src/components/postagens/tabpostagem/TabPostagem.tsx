@@ -18,7 +18,7 @@ function TabPostagem() {
 
                 <AppBar className='barraSobre' position="static">
                     <Tabs className="texto" centered indicatorColor="secondary" onChange={handleChange}>
-                        <Tab label="Todas as postagens" value="1" />
+                        <Tab label="Todos os feedbacks" value="1" />
                         <Tab label="Sobre Vivi" value="2" />
                     </Tabs>
                 </AppBar>

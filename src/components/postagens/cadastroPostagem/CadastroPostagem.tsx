@@ -2,12 +2,13 @@ import React, { ChangeEvent, useEffect, useState } from 'react';
 import { Button, Container, FormControl, FormHelperText, InputLabel, MenuItem, Select, TextField, Typography } from '@material-ui/core';
 import { useNavigate, useParams } from 'react-router-dom';
 import { busca, buscaId, post, put } from '../../../services/Service';
+import { useSelector } from 'react-redux';
+import { UserState } from '../../../store/user/userReducer';
+import { toast } from 'react-toastify';
+import User from '../../../models/User';
 import Tema from '../../../models/Tema';
 import Postagem from '../../../models/Postagem';
 import './CadastroPostagem.css';
-import { useSelector } from 'react-redux';
-import { TokenState } from '../../../store/tokens/tokensReducer';
-import { toast } from 'react-toastify';
 
 function CadastroPostagem() {
 
@@ -15,8 +16,12 @@ function CadastroPostagem() {
     const { id } = useParams<{ id: string }>();
     const [temas, setTemas] = useState<Tema[]>([]);
     
-    const token = useSelector<TokenState, TokenState["tokens"]>(
+    const token = useSelector<UserState, UserState["tokens"]>(
         (state) => state.tokens
+    );
+
+    const usuarioId = useSelector<UserState, UserState["id"]>(
+        (state) => state.id
     );
 
     const [tema, setTema] = useState<Tema>({
@@ -29,7 +34,16 @@ function CadastroPostagem() {
         titulo: '',
         texto: '',
         data: '',
-        tema: null
+        tema: null,
+        usuario: null
+    })
+
+    const [usuario, setUsuario] = useState<User>({
+        id: +usuarioId,    
+        nome: '',
+        usuario: '',
+        senha: '',
+        foto: ''
     })
 
     useEffect(() => {
@@ -51,7 +65,8 @@ function CadastroPostagem() {
     useEffect(() => {
         setPostagem({
             ...postagem,
-            tema: tema
+            tema: tema,
+            usuario: usuario
         })
     }, [tema])
 
@@ -95,7 +110,7 @@ function CadastroPostagem() {
                     'Authorization': token
                 }
             })
-            toast.success('Postagem atualizada com sucesso!', {
+            toast.success('Feedback atualizado com sucesso!', {
                 position: "top-right",
                 autoClose: 2000,
                 hideProgressBar: false,
@@ -111,7 +126,7 @@ function CadastroPostagem() {
                     'Authorization': token
                 }
             })
-            toast.success('Postagem cadastrada com sucesso!', {
+            toast.success('Feedback cadastrado com sucesso!', {
                 position: "top-right",
                 autoClose: 2000,
                 hideProgressBar: false,
@@ -133,7 +148,7 @@ function CadastroPostagem() {
     return (
         <Container maxWidth="sm" className="topo">
             <form onSubmit={onSubmit}>
-                <Typography variant="h3" color="textSecondary" component="h1" align="center">Formulário de cadastro postagem</Typography>
+                <Typography variant="h3" color="textSecondary" component="h1" align="center">Formulário de cadastro do feedback</Typography>
 
                 <TextField
                     value={postagem.titulo}
@@ -170,7 +185,7 @@ function CadastroPostagem() {
                         }
 
                     </Select>
-                    <FormHelperText>Escolha um tema para a postagem</FormHelperText>
+                    <FormHelperText>Escolha sua empresa para o feedback</FormHelperText>
                     <Button type="submit" variant="contained" color="secondary">
                         Finalizar
                     </Button>

@@ -1,17 +1,17 @@
 import React, { useEffect } from 'react';
 import { Box, Button, Grid, Typography } from '@material-ui/core';
+import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { UserState } from '../../store/user/userReducer';
+import { toast } from 'react-toastify';
 import TabPostagem from '../../components/postagens/tabpostagem/TabPostagem';
 import ModalPostagem from '../../components/postagens/modalPostagem/ModalPostagem';
 import "./Home.css";
-import { useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import { TokenState } from '../../store/tokens/tokensReducer';
-import { toast } from 'react-toastify';
 
 function Home() {
 
   let navigate = useNavigate();
-    const token = useSelector <TokenState, TokenState["tokens"]> (
+    const token = useSelector <UserState, UserState["tokens"]> (
 
         (state) => state.tokens
 
@@ -41,7 +41,7 @@ function Home() {
         <Grid alignItems="center" item xs={6}>
           <Box paddingX={20} >
             <Typography variant="h3" gutterBottom color="textPrimary" component="h3" align="center" style={{ color: "white", fontWeight: "bold" }}>Seja bem vinde!</Typography>
-            <Typography variant="h5" gutterBottom color="textPrimary" component="h5" align="center" style={{ color: "white", fontWeight: "bold" }}>Expresse aqui os seus pensamentos e opiniões!</Typography>
+            <Typography variant="h5" gutterBottom color="textPrimary" component="h5" align="center" style={{ color: "white", fontWeight: "bold" }}>Deixe aqui um feedback para meu desempenho e performance!</Typography>
           </Box>
 
           <Box display="flex" justifyContent="center">

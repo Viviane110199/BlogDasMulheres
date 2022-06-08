@@ -2,18 +2,18 @@ import React, { ChangeEvent, useEffect, useState } from 'react';
 import { Button, Container, TextField, Typography } from '@material-ui/core';
 import { useNavigate, useParams } from 'react-router-dom';
 import { buscaId, post, put } from '../../../services/Service';
+import { useSelector } from 'react-redux';
+import { UserState } from '../../../store/user/userReducer';
+import { toast } from 'react-toastify';
 import Tema from '../../../models/Tema';
 import "./CadastroTema.css";
-import { useSelector } from 'react-redux';
-import { TokenState } from '../../../store/tokens/tokensReducer';
-import { toast } from 'react-toastify';
 
 function CadastroTema() {
 
     let navigate = useNavigate();
     const { id } = useParams<{ id: string }>();
 
-    const token = useSelector<TokenState, TokenState["tokens"]>(
+    const token = useSelector<UserState, UserState["tokens"]>(
         (state) => state.tokens
     );
 
@@ -70,7 +70,7 @@ function CadastroTema() {
                         'Authorization': token
                     }
                 })
-                toast.success('Tema atualizado com sucesso!', {
+                toast.success('Empresa atualizada com sucesso!', {
                     position: "top-right",
                     autoClose: 2000,
                     hideProgressBar: false,
@@ -86,7 +86,7 @@ function CadastroTema() {
                         'Authorization': token
                     }
                 })
-                toast.success('Tema cadastrado com sucesso!', {
+                toast.success('Empresa cadastrada com sucesso!', {
                     position: "top-right",
                     autoClose: 2000,
                     hideProgressBar: false,
@@ -108,7 +108,7 @@ function CadastroTema() {
     return (
         <Container maxWidth="sm" className="topo">
             <form onSubmit={onSubmit}>
-                <Typography variant="h3" color="textSecondary" component="h1" align="center" >Formulário de cadastro tema</Typography>
+                <Typography variant="h3" color="textSecondary" component="h1" align="center" >Formulário para cadastrar o nome da empresa</Typography>
                 <TextField
                     value={tema.descricao}
                     onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}

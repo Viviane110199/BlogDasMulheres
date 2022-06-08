@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Button, Card, CardActions, CardContent, Typography } from '@material-ui/core';
 import { Link, useNavigate } from 'react-router-dom';
-import Tema from '../../../models/Tema';
 import { busca } from '../../../services/Service';
-import './ListaTema.css';
 import { useSelector } from 'react-redux';
-import { TokenState } from '../../../store/tokens/tokensReducer';
+import { UserState } from '../../../store/user/userReducer';
 import { toast } from 'react-toastify';
+import Tema from '../../../models/Tema';
+import './ListaTema.css';
 
 function ListaTema() {
 
   let navigate = useNavigate();
   const [temas, setTemas] = useState<Tema[]>([]);
 
-  const token = useSelector<TokenState, TokenState["tokens"]>(
+  const token = useSelector<UserState, UserState["tokens"]>(
     (state) => state.tokens
   );
 

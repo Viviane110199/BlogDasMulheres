@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Box, Button, Card, CardActions, CardContent, Typography } from '@material-ui/core';
 import { useNavigate, useParams } from 'react-router-dom';
-import Postagem from '../../../models/Postagem';
 import { buscaId, deleteId } from '../../../services/Service';
-import './DeletarPostagem.css';
 import { useSelector } from 'react-redux';
-import { TokenState } from '../../../store/tokens/tokensReducer';
+import { UserState } from '../../../store/user/userReducer';
 import { toast } from 'react-toastify';
+import Postagem from '../../../models/Postagem';
+import './DeletarPostagem.css';
 
 function DeletarPostagem() {
 
@@ -14,7 +14,7 @@ function DeletarPostagem() {
     const { id } = useParams<{ id: string }>();
     const [post, setPosts] = useState<Postagem>();
     
-    const token = useSelector<TokenState, TokenState["tokens"]>(
+    const token = useSelector<UserState, UserState["tokens"]>(
         (state) => state.tokens
     );
 
