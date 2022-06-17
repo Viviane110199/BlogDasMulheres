@@ -7,6 +7,7 @@ import { toast } from 'react-toastify';
 import TabPostagem from '../../components/postagens/tabpostagem/TabPostagem';
 import ModalPostagem from '../../components/postagens/modalPostagem/ModalPostagem';
 import "./Home.css";
+import ModalTema from '../../components/temas/modalTema/ModalTema';
 
 function Home() {
 
@@ -41,15 +42,22 @@ function Home() {
         <Grid alignItems="center" item xs={6}>
           <Box paddingX={20} >
             <Typography variant="h3" gutterBottom color="textPrimary" component="h3" align="center" style={{ color: "white", fontWeight: "bold" }}>Seja bem vinde!</Typography>
-            <Typography variant="h5" gutterBottom color="textPrimary" component="h5" align="center" style={{ color: "white", fontWeight: "bold" }}>Deixe aqui um feedback para meu desempenho e performance!</Typography>
+            <Typography variant="h5" gutterBottom color="textPrimary" component="h5" align="center" style={{ color: "white", fontWeight: "bold" }}>Cadastre aqui o nome da sua empresa</Typography>
           </Box>
 
+          <Box display="flex" justifyContent="center">
+            <Box marginRight={1}>
+              <ModalTema />
+            </Box>
+          </Box>
+          
+          <Typography className="text2" variant="h5" gutterBottom color="textPrimary" component="h5" align="center">E agora deixe um feedback para meu desemprenho e performance!</Typography>
+         
           <Box display="flex" justifyContent="center">
             <Box marginRight={1}>
               <ModalPostagem />
             </Box>
           </Box>
-
         </Grid>
 
         <Grid item xs={6} >

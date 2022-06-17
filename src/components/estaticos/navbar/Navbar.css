@@ -1,16 +1,23 @@
 .nav {
     background-color: #000000 !important;
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    flex-direction: center;
+    align-items: center !important;
 }
 
-.nav-text1 {
-    color: #d21554 !important;
-    padding-left: 50px;
+.cursor {
+    padding-right: 80px;
+    cursor: pointer;
+    color: white;
+}
+
+.cursor1 {
+    cursor: pointer;
+    color: white;
 }
 
 .cursor2 {
+    padding-left: 80px;
     cursor: pointer;
     color: white;
 }

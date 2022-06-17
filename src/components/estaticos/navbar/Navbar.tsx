@@ -38,7 +38,7 @@ function Navbar() {
         navbarComponent = <AppBar className='nav' position="static">
         <Toolbar variant="dense">
             <Box className='box1'>
-                <Typography variant="h5" color="inherit">
+                <Typography variant="h5" color="inherit" className="cursor">
                     Blog da Vivi
                 </Typography>
             </Box>
@@ -46,7 +46,7 @@ function Navbar() {
             <Box className='box2' display="flex" justifyContent="start">
                 <Link to="/home" className="text-decorator-none">
                     <Box mx={1} className='cursor1'>
-                        <Typography className="nav-text" variant="h6" color="inherit">
+                        <Typography className="nav-text" variant="h5" color="inherit">
                             Home
                         </Typography>
                     </Box>
@@ -54,7 +54,7 @@ function Navbar() {
 
                 <Link to="/posts" className="text-decorator-none">
                     <Box mx={1} className='cursor1'>
-                        <Typography className="nav-text" variant="h6" color="inherit">
+                        <Typography className="nav-text" variant="h5" color="inherit">
                             Feedbacks
                         </Typography>
                     </Box>
@@ -62,22 +62,14 @@ function Navbar() {
 
                 <Link to="/temas" className="text-decorator-none">
                     <Box mx={1} className='cursor1'>
-                        <Typography className="nav-text" variant="h6" color="inherit">
+                        <Typography className="nav-text" variant="h5" color="inherit">
                             Empresas
                         </Typography>
                     </Box>
                 </Link>
 
-                <Link to="/formularioTema" className="text-decorator-none">
-                    <Box mx={1} className='cursor1'>
-                        <Typography className="nav-text1" variant="h6" color="inherit">
-                            Cadastrar nome da empresa
-                        </Typography>
-                    </Box>
-                </Link>
-
-                <Box mx={1} className='cursor1' onClick={ goLogout }>
-                    <Typography variant="h6" color="inherit">
+                <Box mx={1} className='cursor2' onClick={ goLogout }>
+                    <Typography variant="h5" color="inherit">
                         Logout
                     </Typography>
                 </Box>

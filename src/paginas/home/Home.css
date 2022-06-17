@@ -5,6 +5,14 @@
     align-items: center;
 }
 
+.text2 {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    color: white !important; 
+    font-Weight: bold !important;
+}
+
 .titulo {
    color: white !important;
    font-weight: bold !important;

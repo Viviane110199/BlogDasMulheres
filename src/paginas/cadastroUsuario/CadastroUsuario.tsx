@@ -109,14 +109,6 @@ function CadastroUsuario() {
                             required />
 
                         <TextField
-                            value={user.foto}
-                            onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
-                            id='foto' label='Foto' variant='outlined'
-                            name='foto' margin='normal' fullWidth 
-                            placeholder='Insira um link de foto'
-                            required />
-
-                        <TextField
                             value={user.usuario}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
                             id='usuario' label='Usuario' variant='outlined'

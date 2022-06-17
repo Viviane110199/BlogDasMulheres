@@ -98,17 +98,16 @@ function CadastroTema() {
                 });
             }
             back()
-    
         }
     
         function back() {
-            navigate('/temas')
+            navigate('/home')
         }
 
     return (
         <Container maxWidth="sm" className="topo">
             <form onSubmit={onSubmit}>
-                <Typography variant="h3" color="textSecondary" component="h1" align="center" >Formulário para cadastrar o nome da empresa</Typography>
+                <Typography variant="h3" color="textSecondary" component="h1" align="center" >Formulário</Typography>
                 <TextField
                     value={tema.descricao}
                     onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
