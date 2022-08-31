@@ -22,7 +22,7 @@ function Footer() {
                             <Typography variant="h6" align="center" gutterBottom style={{ color: "white" }}>Siga-me nas redes sociais </Typography>
                         </Box>
                         <Box display="flex" alignItems="center" justifyContent="center">
-                            <a href="https://www.instagram.com/sua_joia.rara/" target="_blank" rel="noopener noreferrer">
+                            <a href="https://www.instagram.com/vivi.pequena/" target="_blank" rel="noopener noreferrer">
                                 <InstagramIcon style={{ fontSize: 40, color: "white" }} />
                             </a>
                             <a href="https://www.linkedin.com/in/viviane-da-rocha-rego/" target="_blank" rel="noopener noreferrer">
