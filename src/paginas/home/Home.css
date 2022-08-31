@@ -1,27 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@900&family=Satisfywght@900&display=swap');
+
 .caixa {
-    background-color: #e81d61;
+    background: linear-gradient(
+    rgb(255, 255, 255) 0%,
+    rgb(252, 173, 199) 35%,
+    rgb(248, 104, 152) 100%
+    ) !important;
     flex-direction: row;  
     justify-content: center; 
     align-items: center;
 }
 
-.text2 {
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 20px;
-    color: white !important; 
-    font-Weight: bold !important;
+.text-principal {
+    font-family: 'Caveat', cursive !important;
+    margin-right: 50px !important;
+    padding-left: 100px;
+    padding-top: 70px !important;
+    color: rgb(0, 0, 0) !important; 
 }
 
-.titulo {
-   color: white !important;
-   font-weight: bold !important;
+.text1 {
+    font-family: 'Caveat', cursive !important;
+    padding-left: 100px;
+    padding-top: 40px;
+    padding-bottom: 70px;
+    color: #000000 !important; 
+}
+
+.text2 {
+    font-family: 'Caveat', cursive !important;
+    color: rgb(0, 0, 0) !important; 
 }
 
 .botao {
-    border-color: white !important;
-    background-color: white !important;
-    color: #d21554 !important;
+    border-color: rgb(255, 0, 85) !important;
+    color: rgb(255, 255, 255) !important;
     font-weight: bold !important;
     text-decoration: none;
 }

@@ -18,8 +18,8 @@ function TabPostagem() {
 
                 <AppBar className='barraSobre' position="static">
                     <Tabs className="texto" centered indicatorColor="secondary" onChange={handleChange}>
-                        <Tab label="Todos os feedbacks" value="1" />
-                        <Tab label="Sobre Vivi" value="2" />
+                        <Tab label="Todas as postagens" value="1" />
+                        <Tab label="Sobre o blog" value="2" />
                     </Tabs>
                 </AppBar>
 
@@ -30,7 +30,7 @@ function TabPostagem() {
                 </TabPanel>
 
                 <TabPanel value="2">
-                    <Typography variant="body1" gutterBottom color="textPrimary" align="justify">Olá, meu nome é Viviane e tenho 23 anos. Sou uma pessoa extremamente apaixonada pela minha família, gosto muito de pôr do sol e da musica let her go do passenger, pois são coisas que me trazem paz e tranquilidade na correria do dia a dia. sou catolica praticante, e na igreja já participei e ainda participo de grupos de música, dança e teatro, o que me ajuda muito a melhorar a minha timidez. Já trabalhei como auxiliar administrativo em um consultório oftalmológico por quase 5 anos, onde fazia de tudo um pouco, arquivamento de prontuários, atendimento telefônico, presencial, pelo whatsapp e email, fazia marcação de consultas e exames e solicitava autorizações de exames para os convênios. Hoje, sou revendedora de joias, pratas e folheados estou no ultimo semestre da faculdade de analise e desenvolvimento de sistemas na universidade nove de julho em ead. faço cursos na plataforma da alura e tenho certificados de html, css, js, scrum e excel, fiz parte de um desafio da Rafaella Ballerini da recriação de uma landing page, onde era usado html e css e também participo do bootcamp da generation para me tornar uma desenvolvedora java fullstack.</Typography>
+                    <Typography className='texto-sobre' variant="body1" gutterBottom color="textPrimary" align="center">O Blog foi criado durante as aulas da Generation Brasil, entre fevereiro e maio de 2022. Inicialmente foi criado um blog para o âmbito pessoal mas, em agosto pude conhecer pessoalmente a B3 - Bolsa de Valores do Brasil, por uma iniciativa da empresa, "B3 de portas abertas" em parceria com a Generation. Isso me inspirou e me motivou a mudar o blog e fazê-lo especialmente para nós mulheres que infelizmente lutamos até hoje por uma sociedade mais igualitária e nada machista. Por sermos mulheres, entrar no mercado de trabalho, principalmente em algumas áreas como tecnologia, aparecem mais dificuldades e infelizmente muitas desanimam, desistindo de realizar seus sonhos profissionais. Espero que esse blog possa de alguma maneira ajudar, para que possamos ver mais mulheres em todas as áreas de atuação.</Typography>
                 </TabPanel>
 
             </TabContext>

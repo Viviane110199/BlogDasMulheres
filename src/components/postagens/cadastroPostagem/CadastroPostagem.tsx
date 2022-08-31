@@ -110,7 +110,7 @@ function CadastroPostagem() {
                     'Authorization': token
                 }
             })
-            toast.success('Feedback atualizado com sucesso!', {
+            toast.success('Postagem atualizada com sucesso!', {
                 position: "top-right",
                 autoClose: 2000,
                 hideProgressBar: false,
@@ -126,7 +126,7 @@ function CadastroPostagem() {
                     'Authorization': token
                 }
             })
-            toast.success('Feedback cadastrado com sucesso!', {
+            toast.success('Postagem cadastrada com sucesso!', {
                 position: "top-right",
                 autoClose: 2000,
                 hideProgressBar: false,
@@ -148,12 +148,12 @@ function CadastroPostagem() {
     return (
         <Container maxWidth="sm" className="topo">
             <form onSubmit={onSubmit}>
-                <Typography variant="h3" color="textSecondary" component="h1" align="center">Formulário de cadastro do feedback</Typography>
+                <Typography variant="h3" color="textSecondary" component="h1" align="center">Formulário de cadastro da publicação</Typography>
 
                 <TextField
                     value={postagem.titulo}
                     onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)}
-                    id="titulo" label="titulo" variant="outlined"
+                    id="titulo" label="cargo" variant="outlined"
                     name="titulo" margin="normal" fullWidth
                 />
 
@@ -165,7 +165,7 @@ function CadastroPostagem() {
                 />
 
                 <FormControl>
-                    <InputLabel id="demo-simple-select-helper-label">Tema </InputLabel>
+                    <InputLabel id="demo-simple-select-helper-label">Área de atuação</InputLabel>
 
                     <Select
                         labelId="demo-simple-select-helper-label"
@@ -185,8 +185,8 @@ function CadastroPostagem() {
                         }
 
                     </Select>
-                    <FormHelperText>Escolha sua empresa para o feedback</FormHelperText>
-                    <Button type="submit" variant="contained" color="secondary">
+                    <FormHelperText>Escolha sua área de atuação para a postagem</FormHelperText>
+                    <Button className='botao-rosa' type="submit" variant="contained" color="secondary">
                         Finalizar
                     </Button>
                 </FormControl>

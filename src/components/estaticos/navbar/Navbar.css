@@ -1,29 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@900&family=Satisfywght@900&display=swap');
+
 .nav {
-    background-color: #000000 !important;
-    display: flex;
-    flex-direction: center;
-    align-items: center !important;
+    background-color: #ffffff !important;
+    border-bottom: 1px dashed black;
+    width: 100%;
 }
 
 .cursor {
-    padding-right: 80px;
-    cursor: pointer;
-    color: white;
+    padding: 15px 220px;
+    font-size: 40px !important;
+    font-weight: bold !important;
+    font-family: 'Caveat', cursive !important;
+    cursor: auto !important;
+    color: rgb(252, 0, 126) !important;
 }
 
 .cursor1 {
+    font-family: 'Caveat', cursive !important;
+    font-size: 24px !important;
     cursor: pointer;
-    color: white;
+    color: rgb(0, 0, 0) !important;
 }
 
-.cursor2 {
-    padding-left: 80px;
-    cursor: pointer;
-    color: white;
+.cursor-barra {
+    color: black !important;
+    cursor: auto !important;
 }
 
-.nav-text {
-    color: #d21554 !important;
+.cursor2 { 
+    font-family: 'Caveat', cursive !important;
+    padding-left: 250px;
+    cursor: pointer;
+    color: rgb(252, 0, 126) !important;
 }
 
 .text-decorator-none {

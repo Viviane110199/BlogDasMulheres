@@ -37,39 +37,39 @@ function Navbar() {
     if(token !== "") {
         navbarComponent = <AppBar className='nav' position="static">
         <Toolbar variant="dense">
-            <Box className='box1'>
-                <Typography variant="h5" color="inherit" className="cursor">
-                    Blog da Vivi
+            <Box display="flex" justifyContent="center">
+                <Typography variant="h4" color="inherit" className="cursor">
+                    Blog das Mulheres
                 </Typography>
             </Box>
 
-            <Box className='box2' display="flex" justifyContent="start">
+            <Box display="flex" justifyContent="center">
                 <Link to="/home" className="text-decorator-none">
-                    <Box mx={1} className='cursor1'>
-                        <Typography className="nav-text" variant="h5" color="inherit">
+                    <Box mx={1}>
+                        <Typography className='cursor1' variant="h5" color="inherit">
                             Home
                         </Typography>
                     </Box>
                 </Link>
 
+                <Box mx={1}>
+                    <Typography className='cursor-barra' variant="h5" color="inherit">
+                        |
+                    </Typography>
+                </Box>
+
                 <Link to="/posts" className="text-decorator-none">
-                    <Box mx={1} className='cursor1'>
-                        <Typography className="nav-text" variant="h5" color="inherit">
-                            Feedbacks
+                    <Box mx={1}>
+                        <Typography className='cursor1' variant="h5" color="inherit">
+                            Postagens
                         </Typography>
                     </Box>
                 </Link>
+            </Box>
 
-                <Link to="/temas" className="text-decorator-none">
-                    <Box mx={1} className='cursor1'>
-                        <Typography className="nav-text" variant="h5" color="inherit">
-                            Empresas
-                        </Typography>
-                    </Box>
-                </Link>
-
-                <Box mx={1} className='cursor2' onClick={ goLogout }>
-                    <Typography variant="h5" color="inherit">
+            <Box>
+                <Box mx={1} onClick={ goLogout }>
+                    <Typography className='cursor2' variant="h5" color="inherit">
                         Logout
                     </Typography>
                 </Box>

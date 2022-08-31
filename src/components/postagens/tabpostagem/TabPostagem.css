@@ -1,7 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+
 .barraSobre {
-    background-color: #d21554 !important;
+    background-color: #c40041 !important;
 }
 
-.texto {
-    font-weight: bold;
+.texto-sobre {
+    font-family: 'Caveat', cursive !important;
+    font-size: 20px !important;
+    padding: 30px !important;
 }

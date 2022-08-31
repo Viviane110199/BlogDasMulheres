@@ -89,9 +89,9 @@ function Login() {
 
 
     return (
-        <Grid container direction='row' justifyContent='center' alignItems='center'>
-            <Grid alignItems='center' xs={6}>
-                <Box paddingX={20}>
+        <Grid container direction='row' justifyContent='center' className='imagem'>
+            <Grid className='formulario' alignItems='center' xs={4}>
+                <Box paddingX={10}>
 
                     <form onSubmit={ logar }>
                         <Typography variant='h3' gutterBottom color='textPrimary' component='h3' align='center' className='textos1'>Entrar</Typography>
@@ -123,11 +123,7 @@ function Login() {
                             <Typography variant='subtitle1' gutterBottom align='center' className='textos1'>Cadastre-se</Typography>
                         </Link>
                     </Box>
-
                 </Box>
-            </Grid>
-            <Grid xs={6} className='imagem'>
-
             </Grid>
         </Grid>
     )

@@ -7,7 +7,6 @@ import { toast } from 'react-toastify';
 import TabPostagem from '../../components/postagens/tabpostagem/TabPostagem';
 import ModalPostagem from '../../components/postagens/modalPostagem/ModalPostagem';
 import "./Home.css";
-import ModalTema from '../../components/temas/modalTema/ModalTema';
 
 function Home() {
 
@@ -41,28 +40,22 @@ function Home() {
       <Grid className='caixa' container>
         <Grid alignItems="center" item xs={6}>
           <Box paddingX={20} >
-            <Typography variant="h3" gutterBottom color="textPrimary" component="h3" align="center" style={{ color: "white", fontWeight: "bold" }}>Seja bem vinde!</Typography>
-            <Typography variant="h5" gutterBottom color="textPrimary" component="h5" align="center" style={{ color: "white", fontWeight: "bold" }}>Cadastre aqui o nome da sua empresa</Typography>
-          </Box>
-
-          <Box display="flex" justifyContent="center">
-            <Box marginRight={1}>
-              <ModalTema />
-            </Box>
+            <Typography className="text-principal" variant="h4" gutterBottom color="textPrimary" component="h4" align="center">Seja bem vinda!</Typography>
           </Box>
           
-          <Typography className="text2" variant="h5" gutterBottom color="textPrimary" component="h5" align="center">E agora deixe um feedback para meu desemprenho e performance!</Typography>
-         
-          <Box display="flex" justifyContent="center">
-            <Box marginRight={1}>
-              <ModalPostagem />
-            </Box>
-          </Box>
+          <Typography className="text1" variant="h6" gutterBottom color="textPrimary" component="h6" align="center">O objetivo desse Blog é trazer relatos e trajetórias de mulheres que já estão inseridas no mercado de trabalho, para que assim possam dar ânimo e força à aquelas que estão iniciando agora ou estão em transição de carreira. <strong>Juntas somos mais fortes!</strong></Typography>
         </Grid>
 
         <Grid item xs={6} >
-          <img src="https://media-exp1.licdn.com/dms/image/C4D03AQF80yvNW4LLpA/profile-displayphoto-shrink_800_800/0/1651601832552?e=1657152000&v=beta&t=3GF8eDhfeHq5btGWBQ62x7JmE3Odh5eLuwG8MMiynG8" alt="" width="500px" height="500px" />
-        </Grid>
+            
+            <Typography className="text2" variant="h6" gutterBottom color="textPrimary" component="h6" align="center">Deixe aqui sua trajetória e inspire outras mulheres!</Typography>
+          
+            <Box display="flex" justifyContent="center">
+              <Box marginRight={1}>
+                <ModalPostagem />
+              </Box>
+            </Box>
+          </Grid>
 
         <Grid xs={12} className='postagens'>
           <TabPostagem />

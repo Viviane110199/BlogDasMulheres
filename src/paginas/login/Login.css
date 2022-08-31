@@ -1,14 +1,24 @@
-.textos1 {
-    font-weight: bold !important;
+ .formulario {
+    background-color: white;
+    border: 1px;
+    opacity: 0.92;
+    border-radius: 1em;
+    margin-top: 240px;
+    margin-right: 260px;
  }
- 
+
  .imagem {
-     background-image: url(https://media-exp1.licdn.com/dms/image/C4D03AQF80yvNW4LLpA/profile-displayphoto-shrink_800_800/0/1651601832552?e=1657152000&v=beta&t=3GF8eDhfeHq5btGWBQ62x7JmE3Odh5eLuwG8MMiynG8);
-     background-repeat: no-repeat;
-     width: 100vh;
-     min-height: 100vh;
-     background-size: cover;
-     background-position: center;
+    background-image: url("../../assets/mulherestec.jpg");
+    background-repeat: no-repeat;
+    width: 100vh;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    align-items: center;
+}
+
+ .textos1 {
+    font-weight: bold !important;
  }
  
  .text-decorator-none {

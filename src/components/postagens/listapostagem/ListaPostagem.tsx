@@ -59,7 +59,7 @@ function ListaPostagem() {
             <CardContent>
 
               <Typography color="textSecondary" gutterBottom>
-                Feedback
+                Postagem
               </Typography>
 
               <Typography variant="h5" component="h2">
